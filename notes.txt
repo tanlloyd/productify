@@ -1,0 +1,15 @@
+vite = tool that run and build frontend projects faster
+
+drizzle ORM = talk to db safely
+TypeScript = safer JS
+dotenv = environment variables
+clerk = authentication (login)
+
+tsconfig.json -> run typescript because js cannot recognize typesrcipt at first 
+
+ "scripts": {
+    "dev": "nodemon",   // run nodemon
+    "build": "tsc"      // run typescript, convert ts to js and output files into dist/
+  }
+
+  clerk = library for sign up authentication using fb, google...
