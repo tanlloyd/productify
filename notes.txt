@@ -13,3 +13,10 @@ tsconfig.json -> run typescript because js cannot recognize typesrcipt at first
   }
 
   clerk = library for sign up authentication using fb, google...
+
+  env = settings and password for all files (must be included in gitignore so all files won't be published)
+
+  drizzle schema = database structure written in code (TypeScript). Define tables and their attributes
+
+  index.ts/db = set up connection to db
+  index.ts = start express api server
