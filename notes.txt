@@ -20,3 +20,11 @@ tsconfig.json -> run typescript because js cannot recognize typesrcipt at first
 
   index.ts/db = set up connection to db
   index.ts = start express api server
+
+  github workflow: (check 1hr 10 min on yt)
+  1. create a branch for yourself for own copy of code
+  2. work on the branch
+  3. commit on the branch to save work
+  4. push the branch to github (not main yet)
+  5. create a pull request on github to merch branch to main
+  6. merge pull request (only code in main)
