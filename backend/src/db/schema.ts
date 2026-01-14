@@ -68,7 +68,7 @@ export const commentsRelations = relations(comments, ({ one }) => ({
 }));
 
 
-// Type inference (select and insert)   // mention type so that user will input the correct data when inserting, and db can match if field exist when selecting
+// Type inference (select and insert)   
 export type User = typeof users.$inferSelect;            
 export type NewUser = typeof users.$inferInsert;
 
