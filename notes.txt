@@ -28,3 +28,6 @@ tsconfig.json -> run typescript because js cannot recognize typesrcipt at first
   4. push the branch to github (not main yet)
   5. create a pull request on github to merch branch to main
   6. merge pull request (only code in main)
+
+  routes folder = routes that the app will use to decide what code runs
+  controller folder = store all the function of the routes (get, post like express)
