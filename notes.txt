@@ -31,3 +31,6 @@ tsconfig.json -> run typescript because js cannot recognize typesrcipt at first
 
   routes folder = routes that the app will use to decide what code runs
   controller folder = store all the function of the routes (get, post like express)
+
+  clerk = login and user management service (give login for gmail/email, authentication...)
+  daisyUI = react components library
