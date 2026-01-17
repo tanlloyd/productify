@@ -19,7 +19,8 @@ function Navbar() {
 
         <div className="flex gap-2 items-center">
           <ThemeSelector />   {/* color theme */}
-          {isSignedIn ? (   {/* if user is signed in, show these buttons */}
+          {/* if user is signed in, show these buttons */}
+          {isSignedIn ? (   
             <>
               <Link to="/create" className="btn btn-primary btn-sm gap-1">
                 <PlusIcon className="size-4" />
