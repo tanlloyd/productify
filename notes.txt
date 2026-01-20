@@ -34,3 +34,14 @@ tsconfig.json -> run typescript because js cannot recognize typesrcipt at first
 
   clerk = login and user management service (give login for gmail/email, authentication...)
   daisyUI = react components library
+  tanstack query = makes sure your app’s fetched data stays in sync, loads faster, and feels smooth (frontend communicate with backend)
+
+  whole app logic: 
+  1. User Input
+  2. useUserSync.js run to send user data to backend to sync user
+  2. goes to api.js functions (functions hold data and send data to middleware at index.ts [exp: app.use("/api/comments", commentRoutes);])
+  3. middleware calls the routes in routes folder, then calls the controller
+  4. controller functions handle the logic and process everything
+
+
+  hook = allow components to store data, run code when smtg changes

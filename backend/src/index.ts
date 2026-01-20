@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
 
 import { ENV } from "./config/env";
 import { clerkMiddleware } from '@clerk/express'
@@ -10,12 +11,12 @@ import commentRoutes from "./routes/commentRoutes";
 
 const app = express();
 
-app.use(clerkMiddleware());
+app.use(clerkMiddleware()); 
 
-app.use(cors({origin: ENV.FRONTEND_URL}));
+app.use(cors({origin: ENV.FRONTEND_URL, credentials: true}));  // allow the frontend to send cookies to backend so can authenticate user
 app.use(clerkMiddleware());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true})); 
 
 app.get("/", (req, res) => {
   res.json({
@@ -30,6 +31,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
-app.use("/api/comments", commentRoutes);
+app.use("/api/comments", commentRoutes);    // 3. request backend with the data from frontend 
 
 app.listen(ENV.PORT, () => console.log("Server is up and running on PORT:", ENV.PORT));
