@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, SignInButton, SignOutButton, useAuth } from "@clerk/clerk-react";
 import Navbar from "./components/Navbar";
 import { Navigate, Route, Routes } from "react-router";
 import HomePage from "./pages/HomePage";
@@ -6,10 +6,16 @@ import ProductPage from "./pages/ProductPage";
 import ProfilePage from "./pages/ProfilePage";
 import CreatePage from "./pages/CreatePage";
 import EditProductPage from "./pages/EditProductPage";
+import useAuthReq from "./hooks/useAuthReq";
+import useUserSync from "./hooks/useUserSync";
 
 
 function App() {
-  
+  const { isClerkLoaded, isSignedIn } = useAuthReq();   // check if user signed in
+  useUserSync();
+
+  if (!isClerkLoaded) return null;  // wait until clerk is loaded
+
   return (
     <div className="min-h-screen bg-base-100">
       <Navbar />    {/* Navbar component at every page */}
