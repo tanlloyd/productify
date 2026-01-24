@@ -44,4 +44,8 @@ tsconfig.json -> run typescript because js cannot recognize typesrcipt at first
   4. controller functions handle the logic and process everything
 
 
-  hook = allow components to store data, run code when smtg changes
+  hook = functions with timing on what should happen when what event triggers it
+  exp: 
+  1. when user sign in, isSignedIn = true & user = {email, name, image}
+  2. useEffect inside useUserSync runs because [isSignedIn, user] changed 
+  3. then hook sends request to POST /api/users/sync
