@@ -31,11 +31,13 @@ export const useDeleteProduct = () => {     // delete product
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: deleteProduct,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["myProducts"] });      // refetch data because cached version is outdated
-    },
-  });
+     mutationFn: deleteProduct,
+     onSuccess: () => {
+       queryClient.invalidateQueries({ queryKey: ["myProducts"] });
++      queryClient.invalidateQueries({ queryKey: ["products"] });
++      queryClient.invalidateQueries({ queryKey: ["product"] }); // invalidate all product detail queries
+     },
+   });
 };
 
 export const useMyProducts = () => {
