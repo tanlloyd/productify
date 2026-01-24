@@ -62,8 +62,7 @@ function CreatePage() {
                   src={formData.imageUrl}
                   alt="Preview"
                   className="w-full h-40 object-cover"
-                  onLoad={(e) => (e.currentTarget.style.display = "block")}
-                  onError={(e) => (e.currentTarget.style.display = "none")}
+                  onError={(e) => (e.target.style.display = "none")}
                 />
               </div>
             )}
