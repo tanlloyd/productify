@@ -3,16 +3,20 @@ import { useAuth, SignInButton } from "@clerk/clerk-react";
 import { useCreateComment, useDeleteComment } from "../hooks/useComments";
 import { SendIcon, Trash2Icon, MessageSquareIcon, LogInIcon } from "lucide-react";
 
-function CommentsSection({ productId, comments = [], currentUserId }) {
+function CommentsSection({ productId, comments = [], currentUserId }) {     // get inputs
   const { isSignedIn } = useAuth();
-  const [content, setContent] = useState("");
-  const createComment = useCreateComment();
+  const [content, setContent] = useState("");  // use state for storing comment
+  const createComment = useCreateComment();  //  use hook to create comment from useComments.js
   const deleteComment = useDeleteComment(productId);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!content.trim()) return;
-    createComment.mutate({ productId, content }, { onSuccess: () => setContent("") });
+    
+    createComment.mutate({ productId, content }, { onSuccess: () => setContent("") });    
+    // .mutate = run a mutation function with these data
+    // createComment.mutate({ productId, content } = POST /comments/:productId, with the content 
+    // onSuccess: () => setContent("") = clear text field after comment created successfully
   };
 
   return (
