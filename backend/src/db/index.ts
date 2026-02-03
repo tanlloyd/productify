@@ -22,4 +22,4 @@ pool.on("error", (err) => {
 
 export const db = drizzle({ client: pool, schema });
 
-/* Set up db connection and export db so app can talk to PostgrSQL */
+/* Set up db connection and export db so app can talk to PostgreSQL */

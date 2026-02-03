@@ -49,3 +49,5 @@ tsconfig.json -> run typescript because js cannot recognize typesrcipt at first
   1. when user sign in, isSignedIn = true & user = {email, name, image}
   2. useEffect inside useUserSync runs because [isSignedIn, user] changed 
   3. then hook sends request to POST /api/users/sync
+
+  mutation = core idea of TanStack Query (to change data in server)

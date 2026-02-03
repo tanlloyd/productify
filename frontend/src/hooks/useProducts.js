@@ -23,7 +23,7 @@ export const useProduct = (id) => {
   return useQuery({             // fetch a single product by id
     queryKey: ["product", id],     // cache key
     queryFn: () => getProductById(id),
-    enabled: !!id,               // only run this query if id is exists
+    enabled: !!id,               // only run this query if id exists
   });
 };
 
