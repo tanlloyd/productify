@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "ts-node src/index.ts",
     "build": "tsc",
     "db:push": "drizzle-kit push"
   },
@@ -16,7 +16,7 @@
     "@clerk/express": "^1.7.60",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "drizzle-orm": "^0.44.7",
+    "drizzle-orm": "^0.45.4",
     "express": "^5.2.1",
     "pg": "^8.16.3"
   },
@@ -24,8 +24,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/pg": "^8.15.6",
-    "drizzle-kit": "^0.31.7",
-    "nodemon": "^3.1.11",
+    "drizzle-kit": "^0.31.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
